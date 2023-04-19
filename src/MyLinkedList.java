@@ -181,6 +181,11 @@ public class MyLinkedList<E> implements MyList{
         }
         return -1;
     }
+    /**
+     * @function lastIndexOf returns the index of the last occurrence of the object in the LinkedList
+     * @param o the object to search
+     * @return int
+     * **/
 
     @Override
     public int lastIndexOf(Object o) {
@@ -193,6 +198,11 @@ public class MyLinkedList<E> implements MyList{
         }
         return -1;
     }
+    /**
+     * @function sort sorts the LinkedList (bubble sort, O(n^2))
+     * @noparam
+     * @return void
+     * **/
 
     @Override
     public void sort() {
