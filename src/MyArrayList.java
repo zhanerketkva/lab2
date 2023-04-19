@@ -46,12 +46,23 @@ public class MyArrayList<T> implements MyList {
         }
         return false;
     }
+    /**
+     * @function add adds an object to an array
+     * @param item object to add
+     * @return void
+     * **/
 
     @Override
     public void add(Object item) {
         increaseBufferIfNeeded();
         arr[size++] = (T) item;
     }
+    /**
+     * @function add adds an object at a specific index
+     * @param item object to add
+     * @param index index where to add item
+     * @return void
+     * **/
     @Override
     public void add(Object item, int index) {
         if(index<0 || index>size) throw new IndexOutOfBoundsException();
@@ -62,6 +73,11 @@ public class MyArrayList<T> implements MyList {
         arr[index] = (T) item;
         size++;
     }
+    /**
+     * @function remove removes an object from an array
+     * @param item delete object
+     * @return boolean
+     * **/
 
     @Override
     public boolean remove(Object item) {
@@ -72,6 +88,11 @@ public class MyArrayList<T> implements MyList {
         }
         return false;
     }
+    /**
+     * @function remove removes an object from an array
+     * @param index The index of the element to remove
+     * @returnObject
+     * **/
 
     @Override
     public Object remove(int index) {
@@ -83,6 +104,11 @@ public class MyArrayList<T> implements MyList {
         this.size--;
         return temporary;
     }
+    /**
+     * @function clear clears the array
+     * @noparam
+     * @return void
+     * **/
 
 
 
