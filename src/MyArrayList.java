@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class MyArrayList<T> implements MyList {
     private T[] arr;
     private int size;
@@ -39,8 +40,7 @@ public class MyArrayList<T> implements MyList {
     }
     @Override
     public void add(Object item, int index) {
-
-        checkIndex(index);
+        if(index<0 || index>size) throw new IndexOutOfBoundsException();
         increaseBufferIfNeeded();
         for (int i = size; i > index; i--) {
             arr[i] = arr[i - 1];
@@ -53,7 +53,8 @@ public class MyArrayList<T> implements MyList {
     public boolean remove(Object item) {
         int index=indexOf(item);
         if (index>=0){
-        return true;
+            remove(index);
+            return true;
         }
         return false;
     }
@@ -103,6 +104,11 @@ public class MyArrayList<T> implements MyList {
 
     @Override
     public void sort() {
+        try{
+            Integer.valueOf((int) this.get(0));
+        } catch(ClassCastException e){
+            return;
+        }
         for(int i=0; i<size; i++){
             for(int j=i; j<size; j++){
                 if ((int) arr[j]<(int)arr[i]){
