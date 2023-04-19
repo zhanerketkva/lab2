@@ -71,9 +71,38 @@ public class MyLinkedList<E> implements MyList{
     }
     @Override
     public boolean remove(Object item) {
+        int objIndex = indexOf(item);
+        if (objIndex >= 0) {
+            remove(objIndex);
+            size--;
+            elements.remove(item);
+            return true;
+        }
         return false;
     }
 
+    @Override
+    public Object remove(int index) {
+        checkIndex(index);
+        Node node = getNodeByIndex(index);
+
+        if (node.previous == null) {
+            this.head = node.next;
+            this.head.previous = null;
+        }
+        else if (node.next == null) {
+            this.tail = node.previous;
+            this.tail.next = null;
+        }
+        else {
+            node.previous.next = node.next;
+            node.next.previous = node.previous;
+        }
+        elements.remove(index);
+        this.size--;
+        return node.val;
+
+    }
     @Override
     public Object remove(int index) {
         return null;
