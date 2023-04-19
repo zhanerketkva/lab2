@@ -26,14 +26,49 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public void add(Object item) {
-
+        createNode((E) item);
+        elements.add(item);
+        size++;
+    }
+    private void createNode(E item) {
+        Node<E> node = new Node<>(item);
+        if (size == 0) {
+            this.head = node;
+        } else {
+            node.previous = this.tail;
+            this.tail.next = node;
+        }
+        this.tail = node;
     }
 
+    public void add(Object item, boolean notSave) {
+        createNode((E) item);
+        if (notSave) elements.add(item);
+        size++;
+    }
     @Override
     public void add(Object item, int index) {
-
+        if (index < 0 || index > size) throw new IndexOutOfBoundsException();
+        Node oldNode = getNodeByIndex(index);
+        Node node = new Node<E>((E) item);
+        if (this.head.equals(oldNode)) {
+            node.next = this.head;
+            this.head.previous = node;
+            this.head = node;
+        } else if (this.tail.equals(oldNode)){
+            node.next = this.tail;
+            node.previous = this.tail.previous;
+            this.tail.previous.next = node;
+            this.tail.previous = node;
+        } else {
+            node.previous = oldNode.previous;
+            node.next = oldNode;
+            oldNode.previous.next = node;
+            oldNode.previous = node;
+        }
+        elements.add(item);
+        size++;
     }
-
     @Override
     public boolean remove(Object item) {
         return false;
@@ -67,5 +102,20 @@ public class MyLinkedList<E> implements MyList{
     @Override
     public void sort() {
 
+    }
+    private Node getNodeByIndex(int index) {
+        checkIndex(index);
+        Node toSearch;
+        toSearch = this.head;
+        while (index != 0) {
+            toSearch = toSearch.next;
+            index--;
+        }
+        return toSearch;
+    }
+    private void checkIndex(int index){
+        if(index < 0 || index>=size){
+            throw new IndexOutOfBoundsException();
+        }
     }
 }
