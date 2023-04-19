@@ -1,10 +1,13 @@
 public class MyLinkedList<E> implements MyList{
+    private MyArrayList elements=new MyArrayList<>();
     private class Node<E> {
         E val;
         Node previous;
         Node next;
         public Node(E v) {
             val = v;
+            previous=null;
+            next=null;
 
         }
     }
@@ -21,7 +24,7 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public boolean contains(Object o) {
-        return false;
+        return(indexOf(o)!=-1? true:false);
     }
 
     @Override
