@@ -116,6 +116,11 @@ public class MyArrayList<T> implements MyList {
         this.arr = (T[]) new Object[5];
         this.size = 0;
     }
+    /**
+     * @function get returns the object from the array at its index
+     * @param index object index
+     * @returnObject
+     * **/
 
 
     @Override
@@ -123,6 +128,11 @@ public class MyArrayList<T> implements MyList {
         checkIndex(index);
         return arr[index];
     }
+    /**
+     * @function indexOf returns the index of the first occurrence of an object
+     * @param o the object to search
+     * @return int
+     * **/
 
     @Override
     public int indexOf(Object o) {
@@ -133,6 +143,11 @@ public class MyArrayList<T> implements MyList {
         }
         return -1;
     }
+    /**
+     * @function lastIndexOf returns the index of the last occurrence of an object in an array
+     * @param o the object to search
+     * @return int
+     * **/
 
     @Override
     public int lastIndexOf(Object o) {
@@ -141,6 +156,11 @@ public class MyArrayList<T> implements MyList {
             if(arr[i].equals((T)o)&& i>index) index=i;
         return index;
     }
+    /**
+     * @function sort sorts an array (bubble sort, O(n^2))
+     * @noparam
+     * @return void
+     * **/
 
     @Override
     public void sort() {
