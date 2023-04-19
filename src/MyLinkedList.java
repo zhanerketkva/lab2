@@ -140,6 +140,11 @@ public class MyLinkedList<E> implements MyList{
         return node.val;
 
     }
+    /**
+     * @function clear clears the LinkedList
+     * @noparam
+     * @return void
+     * **/
 
     @Override
     public void clear() {
@@ -148,12 +153,22 @@ public class MyLinkedList<E> implements MyList{
         size = 0;
 
     }
+    /**
+     * @function get returns the object from the LinkedList at its index
+     * @param index object index
+     * @return E
+     * **/
 
     @Override
     public Object get(int index) {
         checkIndex(index);
         return getNodeByIndex(index).val;
     }
+    /**
+     * @function indexOf returns the index of the first occurrence of an object
+     * @param o the object to search
+     * @return int
+     * **/
 
     @Override
     public int indexOf(Object o) {
