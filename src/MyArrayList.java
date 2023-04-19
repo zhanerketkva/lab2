@@ -126,4 +126,9 @@ public class MyArrayList<T> implements MyList {
             throw new IndexOutOfBoundsException();
         }
     }
+    @Override
+    public String toString() {
+        return Arrays.toString(arr);
+
+    }
 }
