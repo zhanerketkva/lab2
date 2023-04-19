@@ -67,6 +67,12 @@ public class MyLinkedList<E> implements MyList{
         if (notSave) elements.add(item);
         size++;
     }
+    /**
+     * @function add adds an object at a specific index
+     * @param item object to add
+     * @param index index where to add item
+     * @return void
+     * **/
     @Override
     public void add(Object item, int index) {
         if (index < 0 || index > size) throw new IndexOutOfBoundsException();
@@ -90,6 +96,11 @@ public class MyLinkedList<E> implements MyList{
         elements.add(item);
         size++;
     }
+    /**
+     * @function remove removes an object from a LinkedList
+     * @param item delete object
+     * @return boolean
+     * **/
     @Override
     public boolean remove(Object item) {
         int objIndex = indexOf(item);
@@ -101,6 +112,11 @@ public class MyLinkedList<E> implements MyList{
         }
         return false;
     }
+    /**
+     * @function remove removes an object from a LinkedList
+     * @param index The index of the element to remove
+     * @returnObject
+     * **/
 
     @Override
     public Object remove(int index) {
