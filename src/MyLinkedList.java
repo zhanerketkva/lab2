@@ -114,7 +114,8 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public Object get(int index) {
-        return null;
+        checkIndex(index);
+        return getNodeByIndex(index).val;
     }
 
     @Override
