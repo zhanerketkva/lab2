@@ -144,6 +144,17 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public void sort() {
+        try{
+            Integer.valueOf((int) this.get(0));
+        } catch (ClassCastException e) {
+            return;
+        }
+        elements.sort();
+        this.clear();
+        for (int i = 0; i < elements.size(); i++) {
+            this.add(elements.get(i), false);
+        }
+
 
     }
     private Node getNodeByIndex(int index) {
