@@ -44,7 +44,7 @@ public class Main {
         System.out.println(myArrayListInt.lastIndexOf(nextInt));
     }
 
-    public static void showCaseLinkedNode(){
+    public static void showCaseLinkedNode() {
         Scanner sc = new Scanner(System.in);
         MyLinkedList myLinkedList = new MyLinkedList<Integer>();
         System.out.println(" MyLinkedList<Integer>:");
@@ -52,7 +52,7 @@ public class Main {
         System.out.println("<Integer>:");
         System.out.println("Write -1 for stop input");
         int nextInt;
-        while(true) {
+        while (true) {
             nextInt = sc.nextInt();
             if (nextInt == -1) break;
             myLinkedList.add(nextInt);
@@ -73,11 +73,19 @@ public class Main {
         myLinkedList.remove((Object) nextInt);
         System.out.println("> Your array: " + myLinkedList);
 
+        System.out.println("Is the element you entered in the array?");
+        nextInt = sc.nextInt();
+        System.out.println(myLinkedList.contains(nextInt));
 
+        System.out.println("The first index of the occurrence of the element you entered in the array");
+        nextInt = sc.nextInt();
+        System.out.println(myLinkedList.indexOf(nextInt));
 
-
-
-        public static void main(String[] args) {
+        System.out.println("The last index of the occurrence of the element you entered in the array");
+        nextInt = sc.nextInt();
+        System.out.println(myLinkedList.lastIndexOf(nextInt));
+    }
+    public static void main(String[] args) {
             showcaseArrayList();
             showCaseLinkedNode();
         }
