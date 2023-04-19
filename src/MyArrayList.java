@@ -181,6 +181,11 @@ public class MyArrayList<T> implements MyList {
         }
 
     }
+    /**
+     * @function checkIndex checks if the index is valid within the data structure
+     * @param index index
+     * @return void
+     * **/
     private void checkIndex(int index){
         if(index < 0 || index>=size){
             throw new IndexOutOfBoundsException();
