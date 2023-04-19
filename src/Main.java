@@ -63,6 +63,16 @@ public class Main {
         nextInt = sc.nextInt();
         int nextIndex = sc.nextInt();
         myLinkedList.add(nextInt, nextIndex);
+        System.out.println("To remove the element at your index. Enter it:");
+        nextIndex = sc.nextInt();
+        myLinkedList.remove(nextIndex);
+        System.out.println("> Your array: " + myLinkedList);
+
+        System.out.println("To remove the element without knowing its index. Enter number to delete:");
+        nextInt = sc.nextInt();
+        myLinkedList.remove((Object) nextInt);
+        System.out.println("> Your array: " + myLinkedList);
+
 
 
 
