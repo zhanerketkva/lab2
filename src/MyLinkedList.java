@@ -15,17 +15,35 @@ public class MyLinkedList<E> implements MyList{
     private Node<E> head;
     private Node<E> tail;
     private int size;
+    MyLinkedList() {
+        size = 0;
+    }
+    /**
+     * @function size returns the length of the LinkedList
+     * @noparams
+     * @return int
+     * **/
 
 
     @Override
     public int size() {
         return this.size;
     }
+    /**
+     * @function contains true if Object o is in LinkedList
+     * @param o search object
+     * @return boolean
+     * **/
 
     @Override
     public boolean contains(Object o) {
         return(indexOf(o)!=-1? true:false);
     }
+    /**
+     * @function add adds an object to the LinkedList
+     * @param item object to add
+     * @return void
+     * **/
 
     @Override
     public void add(Object item) {
