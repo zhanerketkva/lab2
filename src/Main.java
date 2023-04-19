@@ -44,11 +44,31 @@ public class Main {
         System.out.println(myArrayListInt.lastIndexOf(nextInt));
     }
 
+    public static void showCaseLinkedNode(){
+        Scanner sc = new Scanner(System.in);
+        MyLinkedList myLinkedList = new MyLinkedList<Integer>();
+        System.out.println(" MyLinkedList<Integer>:");
+        System.out.println("> Size: " + myLinkedList.size());
+        System.out.println("<Integer>:");
+        System.out.println("Write -1 for stop input");
+        int nextInt;
+        while(true) {
+            nextInt = sc.nextInt();
+            if (nextInt == -1) break;
+            myLinkedList.add(nextInt);
+        }
+        System.out.println("> Size: " + myLinkedList.size());
+
+        System.out.println(" Enter the element and index separated by a space:");
+        nextInt = sc.nextInt();
+        int nextIndex = sc.nextInt();
+        myLinkedList.add(nextInt, nextIndex);
+
+
 
 
         public static void main(String[] args) {
             showcaseArrayList();
-
-
+            showCaseLinkedNode();
         }
     }
