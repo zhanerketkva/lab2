@@ -7,6 +7,11 @@ public class MyArrayList<T> implements MyList {
         this.arr = (T[]) new Object[5];
         this.size = 0;
     }
+    /**
+     * @function increaseBufferIfNeeded increase the array buffer
+     * @noparams
+     * @return void
+     * **/
 
     public void increaseBufferIfNeeded(){
         if(size==arr.length){
@@ -18,13 +23,22 @@ public class MyArrayList<T> implements MyList {
         arr = newArr;
         }
     }
+    /**
+     * @function size returns the length of the array
+     * @noparams
+     * @return int
+     * **/
 
 
     @Override
     public int size() {
         return this.size;
     }
-
+    /**
+     * @function contains true if Object o is in array
+     * @param o search object
+     * @return boolean
+     * **/
     @Override
     public boolean contains(Object o) {
         for(T element:arr){
