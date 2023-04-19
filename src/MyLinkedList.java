@@ -132,7 +132,14 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        int i = size()-1;
+        Node<E> node = this.tail;
+        while (i >= 0) {
+            if (node.equals(o)) return i;
+            node = this.tail.previous;
+            i--;
+        }
+        return -1;
     }
 
     @Override
