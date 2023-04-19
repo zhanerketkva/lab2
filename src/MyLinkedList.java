@@ -120,7 +120,14 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        int i = 0;
+        Node<E> nextNode = this.head;
+        while (!nextNode.equals(null)) {
+            if (this.head.val.equals(o)) return i;
+            nextNode = nextNode.next;
+            i++;
+        }
+        return -1;
     }
 
     @Override
