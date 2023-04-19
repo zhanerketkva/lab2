@@ -216,9 +216,13 @@ public class MyLinkedList<E> implements MyList{
         for (int i = 0; i < elements.size(); i++) {
             this.add(elements.get(i), false);
         }
-
-
     }
+    /**
+     * @function getNodeByIndex returns the element by its index
+     * @param index
+     * @return Node
+     * **/
+
     private Node getNodeByIndex(int index) {
         checkIndex(index);
         Node toSearch;
@@ -229,6 +233,12 @@ public class MyLinkedList<E> implements MyList{
         }
         return toSearch;
     }
+
+    /**
+     * @function checkIndex checks the index for validity
+     * @param index
+     * @return void
+     * **/
     private void checkIndex(int index){
         if(index < 0 || index>=size){
             throw new IndexOutOfBoundsException();
